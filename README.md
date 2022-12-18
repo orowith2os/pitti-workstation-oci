@@ -43,4 +43,3 @@ fi
 
  * There is an 1.5 minute delay during boot as the initrd waits for some non-existing `dev-disk-by\x2dlabel-root.device` in the initrd. The OS removes all the ignition/coreos-installer bits, but dracut does not get updated properly for that. The workaround is to rename your root partition from "fedora" to "root".
  * The `man` command is missing
- * system users in /etc/passwd and /etc/group need to be moved to /usr/lib (nss-altfiles)

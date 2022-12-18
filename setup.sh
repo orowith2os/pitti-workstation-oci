@@ -22,6 +22,14 @@ ln -sfn /dev/null /usr/lib/systemd/user/at-spi-dbus-bus.service
 cp -a --verbose /etc/systemd/system /etc/systemd/user /usr/lib/systemd/
 rm -r /etc/systemd/system /etc/systemd/user
 
+# move system users for installed packages to /usr
+cat /etc/group >> /usr/lib/group
+cat /etc/passwd >> /usr/lib/passwd
+rm /etc/passwd /etc/group /etc/*-
+
+# we have nss-myhostname
+truncate --size 0 /etc/hosts
+
 # update for Red Hat certificate
 ln -s /etc/pki/ca-trust/source/anchors/2015-RH-IT-Root-CA.pem /etc/pki/tls/certs/2015-RH-IT-Root-CA.pem
 update-ca-trust
