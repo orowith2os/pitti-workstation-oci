@@ -1,13 +1,13 @@
-# Experiment: Martin Pitt's desktop OSTree as OCI container
+# Experiment: Martin Pitt's desktop OSTree from Fedora OCI container
 
 I have maintained a [custom minimal Sway OSTree repo](https://piware.de/post/2020-12-13-ostree-sway/)
-for quite some time in my [ostree-pitti-workstation project](https://github.com/martinpitt/ostree-pitti-workstation) . This works well, but needs some custom infrastructure to
-publish the OSTree, and maintaining the project is not as easy as it could be.
+for quite some time in my [ostree-pitti-workstation project](https://github.com/martinpitt/ostree-pitti-workstation) . This works well, but is relatively complex to maintain.
 
-A recent and cool new OSTree feature is
-[ostree native containers](https://coreos.github.io/rpm-ostree/container/),
-which allows developers to re-use the excellent container tools and
-infrastructure to build and deliver trees.
+So instead of building the tree from scratch, this project is an experiment for
+building it from a [Fedora CoreOS base image](https://quay.io/repository/fedora/fedora-coreos).
+CoreOS is not a very good fit for hardware installation, as it does not ship
+enough drivers, but a lot of stuff that does not belong onto a laptop, such as
+Ignition, zincati, or the coreos-installer. But there is [work underway](https://pagure.io/releng/issue/11047) to provide more minimal base images or [Fedora IoT](https://getfedora.org/iot/), which would make this a lot nicer.
 
 ## Installation
 
