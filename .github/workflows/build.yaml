@@ -15,10 +15,10 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Build container
-        run: podman build -t ghcr.io/martinpitt/pitti-workstation-oci:latest .
+        run: podman build -t ghcr.io/orowith2os/pitti-workstation-oci:latest .
 
       - name: Log into container registry
         run: podman login -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }} ghcr.io
 
       - name: Push containers to registry
-        run: podman push ghcr.io/martinpitt/pitti-workstation-oci:latest
+        run: podman push ghcr.io/orowith2os/pitti-workstation-oci:latest
