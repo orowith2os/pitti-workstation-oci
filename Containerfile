@@ -14,8 +14,8 @@ RUN rpm-ostree install \
     dejavu-sans-fonts dejavu-serif-fonts dejavu-sans-mono-fonts fontawesome-fonts google-noto-emoji-color-fonts \
     xdg-desktop-portal-gtk pavucontrol pcmanfm nm-connection-editor gnome-keyring pinentry-gnome3 mate-polkit \
     eog evince lxterminal gnome-disk-utility rofimoji \
-    sway swayidle swaylock kanshi mako waybar slurp grim xorg-x11-server-Xwayland firefox-wayland \
-    flatpak \
+    sway swayidle swaylock kanshi mako waybar slurp grim xorg-x11-server-Xwayland \
+    flatpak distrobox \
     wofi brightnessctl wl-clipboard && \
     \
     rpm-ostree override remove -n adcli chrony clevis clevis-luks clevis-dracut clevis-systemd \
